@@ -1,0 +1,54 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath}
+\begin{document}
+\title{homework 2}
+\author{HuJinghui (11061191)}
+\date{\today}
+\maketitle
+\noindent
+1) Solution,
+$$(N, M) = (13, 5)$$
+$$answer = 39$$
+$$(N, M) = (13, 7)$$
+$$answer = 37$$
+$$(N, M) = (19, 5)$$
+$$answer = 73$$
+$$(N, M) = (19, 7)$$
+$$answer = 59$$
+$$(N, M) = (23, 5)$$
+$$answer = 101$$
+$$(N, M) = (23, 7)$$
+$$answer = 75$$
+\newline
+2) The minimum amount of Hanoi problem is $T_n=2^n-1$, and I think sub-minimum
+answer $T^{'}_{n}=T_n-1$ is correct. I will give a possible way to 
+implemnet it. Now we have 3 pegs $(p_1, p_2, p_3)$, in the minimum solution, 
+the last step is to move the smallest disk to $p_3$, instead of this step,
+we can move the last disk to another empty peg, then move the last disk
+to $p_3$.
+\newline
+\clearpage
+\noindent
+3) if break Lucas rule once \\
+~\newline
+\begin{tabular}{c|cc}
+Disks & Break & No breaks\\ \hline
+1 & 1 & 1\\
+2 & 3 & 3\\
+3 & 5 & 7\\
+4 & 9 & 15\\
+5 & 17 & 31\\
+... & ... & ...
+\end{tabular}
+~\newline
+if break Lucas rule once, the answer is $2^{n-1}+1$.\\
+Suppose we have 3 pegs $(p_1, p_2, p_3)$, firstly, move $n-2$ disks to $p_2$,
+using $2^{n-2}-1$ steps. Secondly, move the topest disk on $p_1$ to $p_2$ (
+breaking Lucas rule). then, move the last disk to $p_3$ and move the topest disk
+on $p_2$ to $p_3$, using $3$ steps. Finally, move all the disks on $p_2$ to
+$p_3$, using $2^{n-2}-1$ steps. Totally, we'll use
+\[
+(2^{n-2}-1) \times 2 + 3 = 2^{n-1}+1
+\]
+steps.
+\end{document}

@@ -1,0 +1,5 @@
+vim:
+set autoindent # for programmer
+set nu # show line number
+set filetype=c # set filetype ???
+
