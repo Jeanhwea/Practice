@@ -1,0 +1,75 @@
+\documentclass{article}
+\usepackage{amsmath}
+\begin{document}
+\title{CM-homework3}
+\author{HuJinghui 11061191}
+\date{\today}
+\maketitle
+\section{Notation}
+$$S_n = \sum_{1 \leq k \leq n} k^5$$
+(the sum of first n positive integers to the 5th power)
+\section{Method 1:}
+Since $S_n$ is a polynomials, we can let 
+$S_n = a + bn + cn^2 + dn^3 + en^4 + fn^5 + gn^6$
+and solve the linear equation system below.
+\begin{equation}
+\left\{
+\begin{aligned}
+S_1 &= a + b + c + d + e + f + g\\
+S_2 &= a + 2b + 2^2c + 2^3d + 2^4e + 2^5f + 2^6g\\
+S_3 &= a + 3b + 3^2c + 3^3d + 3^4e + 3^5f + 3^6g\\
+S_4 &= a + 4b + 4^2c + 4^3d + 4^4e + 4^5f + 4^6g\\
+S_5 &= a + 5b + 5^2c + 5^3d + 5^4e + 5^5f + 5^6g\\
+S_6 &= a + 6b + 6^2c + 6^3d + 6^4e + 6^5f + 6^6g\\
+S_7 &= a + 7b + 7^2c + 7^3d + 7^4e + 7^5f + 7^6g
+\end{aligned}
+\right.
+\end{equation}
+which answer is
+\begin{equation}
+\left\{
+\begin{aligned}
+a &= 0\\
+b &= 0\\
+c &= -\frac{1}{12}\\
+d &= 0\\
+e &= \frac{5}{12}\\
+f &= \frac{1}{2}\\
+g &= \frac{1}{6}
+\end{aligned}
+\right.
+\end{equation}
+so, finally 
+\begin{equation}
+S_n=-\frac{1}{12}n^2+\frac{5}{12}n^4
++\frac{1}{2}n^5+\frac{1}{6}n^6
+\end{equation}
+\section{Method 2:}
+Let $$P_n=\sum_{1 \leq k \leq n} k^6 $$
+Then,
+\begin{equation}
+\begin{aligned}
+P_n + (n+1)^6 &= \sum_{0 \leq k \leq n} (k+1)^6\\
+&= \sum_{0 \leq k \leq n} (k^6 + 5k^5 + 15k^4 + 20k^3 + 15k^2 + 5k + 1)\\
+&= \sum_{0 \leq k \leq n} k^6 + 5\sum_{0 \leq k \leq n} k^5 +
+   15\sum_{0 \leq k \leq n} k^4 +20\sum_{0 \leq k \leq n} k^3 \\
+& +15\sum_{0 \leq k \leq n} k^2 + 5\sum_{0 \leq k \leq n} k   +
+   \sum_{0 \leq k \leq n} 1\\
+&= P_n + 5S_n + 15 \times \frac{1}{30}n(n+1)(1+2n)(-1+3n+3n^2) \\
+& +20 \times \frac{1}{4}n^2(n+1)^2 +15 \times \frac{1}{6}n(n+1)(2n+1) \\
+& +5 \times \frac{1}{2}n(1+n) + n
+\end{aligned}
+\end{equation}
+Eliminate $P_n$ on both sides, then we got answer as before, equation (3).
+\section{Method 3:}
+We can do sumation by a simple c program.
+\begin{verbatim}
+int sum(int n){
+  int ret = 0;
+  int i;
+  for(i=1;i<=n;i++)
+    ret += i * i * i * i * i;
+  return ret;
+}
+\end{verbatim}
+\end{document}
