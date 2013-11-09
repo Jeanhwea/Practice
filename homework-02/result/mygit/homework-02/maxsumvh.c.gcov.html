@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - app.info - mygit/homework-02/maxsumvh.c</title>
+  <link rel="stylesheet" type="text/css" href="../../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../../index.html">top level</a> - <a href="index.html">mygit/homework-02</a> - maxsumvh.c<span style="font-size: 80%;"> (source / <a href="maxsumvh.c.func.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">app.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">30</td>
+            <td class="headerCovTableEntry">31</td>
+            <td class="headerCovTableEntryHi">96.8 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2013-09-25</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntry">19</td>
+            <td class="headerCovTableEntry">20</td>
+            <td class="headerCovTableEntryHi">95.0 %</td>
+          </tr>
+          <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">           Branch data     Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>                :            : // filename: maxsumvh.c</a>
+<span class="lineNum">       2 </span>                :            : #include &quot;./main.h&quot;
+<span class="lineNum">       3 </span>                :<span class="lineCov">        123 : int maxsumvh(int a[][COL], int row, int col)</span>
+<span class="lineNum">       4 </span>                :            : {
+<span class="lineNum">       5 </span>                :            :         int i, j, start;
+<span class="lineNum">       6 </span>                :            :         int max_so_far, min_so_far, ret;
+<span class="lineNum">       7 </span>                :            :         int summax, summin, sumall;
+<span class="lineNum">       8 </span>                :            :         int sum[ROW][COL];
+<span class="lineNum">       9 </span>                :            : 
+<span class="lineNum">      10 </span>                :<span class="lineCov">        123 :         ret = a[0][0];</span>
+<span class="lineNum">      11 </span>        [<span class="branchCov" title="Branch 0 was taken 5100 times"> + </span><span class="branchCov" title="Branch 1 was taken 123 times"> + </span>]:<span class="lineCov">       5223 :         for (i = 0; i &lt; row; i++)</span>
+<span class="lineNum">      12 </span>        [<span class="branchCov" title="Branch 0 was taken 132600 times"> + </span><span class="branchCov" title="Branch 1 was taken 5100 times"> + </span>]:<span class="lineCov">     137700 :                 for (j = 0; j &lt; col; j++)</span>
+<span class="lineNum">      13 </span>                :<span class="lineCov">     132600 :                         ret = MAX(a[i][j], ret);</span>
+<span class="lineNum">      14 </span>                :            : 
+<span class="lineNum">      15 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 123 times"> + </span>]:<span class="lineCov">        123 :         if (ret &lt; 0)</span>
+<span class="lineNum">      16 </span>                :<span class="lineNoCov">          0 :                 return ret;</span>
+<span class="lineNum">      17 </span>                :            : 
+<span class="lineNum">      18 </span>        [<span class="branchCov" title="Branch 0 was taken 3090 times"> + </span><span class="branchCov" title="Branch 1 was taken 123 times"> + </span>]:<span class="lineCov">       3213 :         for (start = 0; start &lt; col; start++) {</span>
+<span class="lineNum">      19 </span>        [<span class="branchCov" title="Branch 0 was taken 132600 times"> + </span><span class="branchCov" title="Branch 1 was taken 3090 times"> + </span>]:<span class="lineCov">     135690 :                 for (i = 0; i &lt; row; i++) {</span>
+<span class="lineNum">      20 </span>        [<span class="branchCov" title="Branch 0 was taken 3990800 times"> + </span><span class="branchCov" title="Branch 1 was taken 132600 times"> + </span>]:<span class="lineCov">    4123400 :                         for (j = start; j - start &lt; col; j++) {</span>
+<span class="lineNum">      21 </span>        [<span class="branchCov" title="Branch 0 was taken 132600 times"> + </span><span class="branchCov" title="Branch 1 was taken 3858200 times"> + </span>]:<span class="lineCov">    3990800 :                                 if (j == start)</span>
+<span class="lineNum">      22 </span>                :<span class="lineCov">     132600 :                                         sum[i][j % col] = a[i][j % col];</span>
+<span class="lineNum">      23 </span>                :            :                                 else
+<span class="lineNum">      24 </span>                :<span class="lineCov">    3858200 :                                         sum[i][j % col] =</span>
+<span class="lineNum">      25 </span>                :<span class="lineCov">    7716400 :                                             a[i][j % col] +</span>
+<span class="lineNum">      26 </span>                :<span class="lineCov">    3858200 :                                             sum[i][(j - 1) % col];</span>
+<span class="lineNum">      27 </span>                :            :                         }
+<span class="lineNum">      28 </span>                :            :                 }
+<span class="lineNum">      29 </span>        [<span class="branchCov" title="Branch 0 was taken 88520 times"> + </span><span class="branchCov" title="Branch 1 was taken 3090 times"> + </span>]:<span class="lineCov">      91610 :                 for (j = start; j - start &lt; col; j++) {</span>
+<span class="lineNum">      30 </span>                :<span class="lineCov">      88520 :                         max_so_far = min_so_far = sum[0][j % col];</span>
+<span class="lineNum">      31 </span>        [<span class="branchCov" title="Branch 0 was taken 3990800 times"> + </span><span class="branchCov" title="Branch 1 was taken 88520 times"> + </span>]:<span class="lineCov">    4079320 :                         for (i = 0; i &lt; row; i++) {</span>
+<span class="lineNum">      32 </span>                :<span class="lineCov">    3990800 :                                 max_so_far = MIN(sum[i][j % col], max_so_far);</span>
+<span class="lineNum">      33 </span>                :<span class="lineCov">    3990800 :                                 min_so_far = MAX(sum[i][j % col], min_so_far);</span>
+<span class="lineNum">      34 </span>                :            :                         }
+<span class="lineNum">      35 </span>                :            : 
+<span class="lineNum">      36 </span>                :<span class="lineCov">      88520 :                         sumall = summax = summin = 0;</span>
+<span class="lineNum">      37 </span>        [<span class="branchCov" title="Branch 0 was taken 3990800 times"> + </span><span class="branchCov" title="Branch 1 was taken 88520 times"> + </span>]:<span class="lineCov">    4079320 :                         for (i = 0; i &lt; row; i++) {</span>
+<span class="lineNum">      38 </span>                :<span class="lineCov">    3990800 :                                 sumall += sum[i][j % col];</span>
+<span class="lineNum">      39 </span>                :<span class="lineCov">    3990800 :                                 summax += sum[i][j % col];</span>
+<span class="lineNum">      40 </span>                :<span class="lineCov">    3990800 :                                 summin += sum[i][j % col];</span>
+<span class="lineNum">      41 </span>                :<span class="lineCov">    3990800 :                                 max_so_far = MAX(max_so_far, summax);</span>
+<span class="lineNum">      42 </span>                :<span class="lineCov">    3990800 :                                 min_so_far = MIN(min_so_far, summin);</span>
+<span class="lineNum">      43 </span>                :<span class="lineCov">    3990800 :                                 summax = MAX(summax, 0);</span>
+<span class="lineNum">      44 </span>                :<span class="lineCov">    3990800 :                                 summin = MIN(summin, 0);</span>
+<span class="lineNum">      45 </span>                :            :                         }
+<span class="lineNum">      46 </span>                :<span class="lineCov">      88520 :                         ret = MAX(ret, MAX(sumall - min_so_far, max_so_far));</span>
+<span class="lineNum">      47 </span>                :            :                 }
+<span class="lineNum">      48 </span>                :            :         }
+<span class="lineNum">      49 </span>                :<span class="lineCov">        123 :         return ret;</span>
+<span class="lineNum">      50 </span>                :            : }
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.9</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>
