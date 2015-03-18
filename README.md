@@ -1,4 +1,4 @@
-fuzl
+Practice
 ======
 
-a practice code repository
+a practice code repository for my c codes
